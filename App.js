@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import CardAnnouncement from './src/components/CardAnnouncement';
 import CardHeader from './src/components/CardHeader';
 import CardJobOffer from './src/components/CardJobOffer';
 import Search from './src/components/Search';
 import SectionHeader from './src/components/SectionHeader';
+import ChipCategory from './src/components/ChipCategory';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Search></Search>
       <CardAnnouncement></CardAnnouncement>
       <SectionHeader></SectionHeader>
+      <ChipCategory/>
       <CardJobOffer></CardJobOffer>
     </View>
   );
