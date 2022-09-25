@@ -1,14 +1,14 @@
 import { Text, View, StyleSheet, Image, ScrollView} from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { primaryColor, greyColor, greyTextColor, greySecondaryColor } from './constants/styles';
+import { primaryColor, greyColor, greyTextColor, greySecondaryColor } from '../constants/styles';
 
 export default function CardJobOffer() {
     return (
         <View style={[styles.container, { flexDirection: "column" }]}>
             <View style= { styles.header }>
                 <View style= {{ flex: 0.7, borderColor: greyColor, borderRadius: 25, borderWidth: 2, marginBottom: 5, padding: 5, alignItems: 'center'}}>
-                    <Image source={require('../assets/google-icon.png')} resizeMode="cover" style={ {height: 50, width: 50} }></Image>
+                    <Image source={require('../../assets/google-icon.png')} resizeMode="cover" style={ {height: 50, width: 50} }></Image>
                 </View>
                 <View style= {{ flex: 3, flexDirection: 'row' }}>
                     <View style= {{ marginLeft: 15, flexDirection: 'column', justifyContent: 'space-around' }}>
