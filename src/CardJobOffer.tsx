@@ -1,7 +1,7 @@
-import { Text, View, StyleSheet, Image} from "react-native";
+import { Text, View, StyleSheet, Image, ScrollView} from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { primaryColor, greyColor, greyTextColor } from './constants/styles';
+import { primaryColor, greyColor, greyTextColor, greySecondaryColor } from './constants/styles';
 
 export default function CardJobOffer() {
     return (
@@ -26,15 +26,21 @@ export default function CardJobOffer() {
                 <View style= {{ flex: 1 }}/>
                 <View style= {{ flex: 3 }}>
                     <View style= {{ flexDirection: 'column' }}>
-                        <Text>
+                        <Text style= {{ fontSize: 16, color: greyTextColor }}>
                         California, United States
                         </Text>
-                        <Text>
-                            $10,000 - $25,000 / Month
+                        <Text style= {{ fontSize: 18, color: primaryColor }}>
+                            $10,000 - $25,000 / month
                         </Text>
-                        <Text>
-                            Full time Onsite
-                        </Text>
+                        <ScrollView horizontal={true}>
+                            <Text style={[styles.modality]}>
+                                Full time
+                            </Text>
+                            <Text style={[styles.modality]}>
+                                Onsite
+                            </Text>
+                        </ScrollView>
+                        
                     </View>
                 </View>
             </View>
@@ -49,20 +55,26 @@ const styles = StyleSheet.create({
       borderRadius: 25,
       borderWidth: 2,
       width: 350,
-      justifyContent: 'flex-end'
     },
     header: {
         flexDirection: 'row',
         borderBottomColor: greyColor,
         borderBottomWidth: 2,
-        marginBottom: 30,
-        backgroundColor: primaryColor
+        paddingBottom: 12,
     },
     body: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        backgroundColor: primaryColor,
+        marginTop: 30,
         alignItems: 'center',
         height:50
-    }
+    },
+    modality: {
+        borderColor: greySecondaryColor,
+        color: greySecondaryColor,
+        borderRadius: 8,
+        borderWidth: 1,
+        padding: 5,
+        margin: 5
+      },
   });
