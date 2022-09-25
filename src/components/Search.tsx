@@ -25,11 +25,10 @@ export default function Search({ searchPhrase = '', setSearchPhrase = 's', setCL
 
 const styles = StyleSheet.create({
     container: {
-      margin: 15,
+      marginVertical: 10,
       justifyContent: 'flex-start',
       alignItems: 'center',
       flexDirection: 'row',
-      width: '95%'
     },
     searchBar: {
       padding: 10,

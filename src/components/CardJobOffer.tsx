@@ -2,10 +2,12 @@ import { Text, View, StyleSheet, Image, ScrollView} from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { primaryColor, greyColor, greyTextColor, greySecondaryColor } from '../constants/styles';
+import JobOffer from '../models/JobOffer';
 
-export default function CardJobOffer() {
+export default function CardJobOffer(properties: JobOffer) {
+    const { title, subtitle, location, payment, hasHorizontalMargin } = properties;
     return (
-        <View style={[styles.container, { flexDirection: "column" }]}>
+        <View style={[hasHorizontalMargin ? styles.containerHorizontalMargin : styles.container, { flexDirection: "column" }]}>
             <View style= { styles.header }>
                 <View style= {{ flex: 0.7, borderColor: greyColor, borderRadius: 25, borderWidth: 2, marginBottom: 5, padding: 5, alignItems: 'center'}}>
                     <Image source={require('../../assets/google-icon.png')} resizeMode="cover" style={ {height: 50, width: 50} }></Image>
@@ -13,10 +15,10 @@ export default function CardJobOffer() {
                 <View style= {{ flex: 3, flexDirection: 'row' }}>
                     <View style= {{ marginLeft: 15, flexDirection: 'column', justifyContent: 'space-around' }}>
                         <Text style= {{ fontSize: 20, fontWeight: 'bold' }}>
-                            UI/UX Designer
+                            { title }
                         </Text>
                         <Text style= {{ fontSize: 16, color: greyTextColor }}>
-                            Google LLC
+                            { subtitle }
                         </Text>
                     </View>
                 </View>
@@ -27,10 +29,10 @@ export default function CardJobOffer() {
                 <View style= {{ flex: 3 }}>
                     <View style= {{ flexDirection: 'column' }}>
                         <Text style= {{ fontSize: 16, color: greyTextColor }}>
-                        California, United States
+                        { location }
                         </Text>
                         <Text style= {{ fontSize: 18, color: primaryColor }}>
-                            $10,000 - $25,000 / month
+                            { payment }
                         </Text>
                         <ScrollView horizontal={true}>
                             <Text style={[styles.modality]}>
@@ -50,12 +52,18 @@ export default function CardJobOffer() {
 
 const styles = StyleSheet.create({
     container: {
-      padding: 20,
-      borderColor: greyColor,
-      borderRadius: 25,
-      borderWidth: 2,
-      width: 350,
-      marginVertical: 10
+        padding: 20,
+        borderColor: greyColor,
+        borderRadius: 25,
+        borderWidth: 2,
+        marginVertical: 10
+    },
+    containerHorizontalMargin: {
+        padding: 20,
+        borderColor: greyColor,
+        borderRadius: 25,
+        borderWidth: 2,
+        margin: 10,
     },
     header: {
         flexDirection: 'row',

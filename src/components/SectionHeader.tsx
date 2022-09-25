@@ -1,14 +1,16 @@
 import { View, StyleSheet, Text } from 'react-native';
 import { primaryColor } from '../constants/styles';
+import Header from '../models/Header';
 
-export default function SectionHeader() {
+export default function SectionHeader(properties: Header) {
+    const { leftText, rightText } = properties;
     return (
         <View style= { styles.container }>
             <Text style= { styles.leftText }>
-                Recommendation
+                { leftText }
             </Text>
             <Text style= { styles.rightText }>
-                See All
+                { rightText }
             </Text>
         </View>
     );
