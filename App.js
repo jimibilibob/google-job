@@ -4,6 +4,7 @@ import CardAnnouncement from './src/components/CardAnnouncement';
 import CardHeader from './src/components/CardHeader';
 import CardJobOffer from './src/components/CardJobOffer';
 import Search from './src/components/Search';
+import SectionHeader from './src/components/SectionHeader';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <CardHeader></CardHeader>
       <Search></Search>
       <CardAnnouncement></CardAnnouncement>
+      <SectionHeader></SectionHeader>
       <CardJobOffer></CardJobOffer>
     </View>
   );

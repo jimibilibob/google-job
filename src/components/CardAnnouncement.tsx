@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         backgroundColor: secondaryColor,
         flexDirection: 'row',
         padding: 20,
-        margin: 12,
+        marginVertical: 10,
         borderRadius: 25,
         width: 350,
         alignItems: 'flex-start'
