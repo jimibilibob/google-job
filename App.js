@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import CardAnnouncement from './src/components/CardAnnouncement';
 import CardHeader from './src/components/CardHeader';
 import CardJobOffer from './src/components/CardJobOffer';
+import Search from './src/components/Search';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <CardHeader></CardHeader>
+      <Search></Search>
       <CardAnnouncement></CardAnnouncement>
       <CardJobOffer></CardJobOffer>
     </View>
@@ -18,7 +20,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0000',
     alignItems: 'center',
     justifyContent: 'center',
   },
