@@ -4,7 +4,7 @@ import { greyColor, greySecondaryColor, primaryColor } from '../constants/styles
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSliders } from '@fortawesome/free-solid-svg-icons';
 
-export default function Search({ searchPhrase = '', setSearchPhrase = 's', setCLicked = true}) {
+export default function Search() {
     return (
         <View style={styles.container}>
             <View style={ styles.searchBar } >

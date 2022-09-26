@@ -5,12 +5,12 @@ import { primaryColor, greyColor, greyTextColor, greySecondaryColor } from '../c
 import JobOffer from '../models/JobOffer';
 
 export default function CardJobOffer(properties: JobOffer) {
-    const { title, subtitle, location, payment, hasHorizontalMargin } = properties;
+    const { title, subtitle, location, payment, hasHorizontalMargin, iconUrl } = properties;
     return (
         <View style={[hasHorizontalMargin ? styles.containerHorizontalMargin : styles.container, { flexDirection: "column" }]}>
             <View style= { styles.header }>
-                <View style= {{ flex: 0.7, borderColor: greyColor, borderRadius: 25, borderWidth: 2, marginBottom: 5, padding: 5, alignItems: 'center'}}>
-                    <Image source={require('../../assets/google-icon.png')} resizeMode="cover" style={ {height: 50, width: 50} }></Image>
+                <View style= {{ flex: 0.7, borderColor: greyColor, borderRadius: 15, borderWidth: 2, marginBottom: 5, paddingVertical: 10, alignItems: 'center'}}>
+                    <Image source={{uri: iconUrl}} resizeMode="cover" style={ {height: 30, width: 30} }></Image>
                 </View>
                 <View style= {{ flex: 3, flexDirection: 'row' }}>
                     <View style= {{ marginLeft: 15, flexDirection: 'column', justifyContent: 'space-around' }}>
@@ -60,10 +60,12 @@ const styles = StyleSheet.create({
     },
     containerHorizontalMargin: {
         padding: 20,
+        paddingBottom: 30,
         borderColor: greyColor,
         borderRadius: 25,
         borderWidth: 2,
         margin: 10,
+        width: 320
     },
     header: {
         flexDirection: 'row',
